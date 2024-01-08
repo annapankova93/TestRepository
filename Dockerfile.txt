@@ -1,0 +1,11 @@
+FROM openjdk:8-jdk
+
+RUN apt-get update && apt-get install -y git maven
+
+RUN git clone https://github.com/annapankova93/TestRepository/tree/new
+
+WORKDIR /docker
+
+RUN mvn clean package
+
+CMD java -javaagent:/home/anna/docker/TestRepository-new/jolokia-agent-jvm-java.jar -jar /home/anna/docker/TestRepository-new/target/newrest-0.0.1-SNASHOT.jar
