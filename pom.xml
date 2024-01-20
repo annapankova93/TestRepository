@@ -46,6 +46,9 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<version>3.2.0</version>
+				<configuration>    
+                		<mainClass>src/main/java/com/example/newrest/model/User.java</mainClass>
+            			</configuration>
                 		<executions>
                     			<execution>
                       		 		 <goals>
